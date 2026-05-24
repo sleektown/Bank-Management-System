@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "BankAPIs.Controllers.AccountsController",
+    "Method": "Deposit",
+    "RelativePath": "api/Accounts/deposit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "depositRequest",
+        "Type": "BankAPIs.DTOs.DepositRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankAPIs.Controllers.AccountsController",
+    "Method": "Withdraw",
+    "RelativePath": "api/Accounts/withdraw",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "withdrawRequest",
+        "Type": "BankAPIs.DTOs.WithdrawRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
