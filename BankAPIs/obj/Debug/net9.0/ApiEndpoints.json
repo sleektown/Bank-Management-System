@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "BankAPIs.Controllers.AccountsController",
+    "Method": "GetTransactions",
+    "RelativePath": "api/Accounts/{accountNumber}/transactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "accountNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BankAPIs.Controllers.AccountsController",
     "Method": "Deposit",
     "RelativePath": "api/Accounts/deposit",
     "HttpMethod": "POST",

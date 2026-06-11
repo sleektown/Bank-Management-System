@@ -75,5 +75,33 @@ namespace BankAPIs.Controllers
                 UpdatedBalance = updatedBalance
             });
         }
+
+        [HttpGet("{accountNumber}/transactions")]
+        public IActionResult GetTransactions(string accountNumber)
+        {
+            try
+            {
+                var transactions = _accountService.GetTransactions(accountNumber);
+
+                var response = transactions.Select(t=> new TransactionResponseDto
+                {
+                    TransactionId = t.TransactionId,
+                    TransactionType = t.TransactionType,
+                    Amount = t.Amount,
+                    TransactionTime = t.TransactionTime,
+                    BalanceBeforeTransaction = t.BalanceBeforeTransaction,
+                    BalanceAfterTransaction = t.BalanceAfterTransaction
+                }).ToList();
+                return Ok(response);
+            }
+            catch (AccountNotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An unexpected error occurred." });
+            }
+        }
     }
 }
